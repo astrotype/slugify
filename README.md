@@ -23,4 +23,4 @@ console.log(slugify('Екатеринбург')) // yekaterinburg
 
 ## Источник правил
 
-[Правила транслитерации Яндекса](https://yandex.ru/support/nmaps/ru/app_transliteration.html)
+[Правила транскрибирования русских букв Яндекса](https://yandex.ru/support/nmaps/ru/app_transliteration.html)
