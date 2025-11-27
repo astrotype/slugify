@@ -8,6 +8,8 @@
 
 ## Использование
 
+Просто скопируйте файл slugify.ts в ваш проект
+
 ```ts
 import slugify from './slugify'
 
