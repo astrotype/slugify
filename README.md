@@ -1,13 +1,17 @@
 # Транслитерация URL по правилам Яндекса
 
-Надёжная и лёгкая функция, идеально подходит для генерации SEO-дружественных URL (slug) из русского текста.
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+Транслитерация русских слов в латиницу по правилам Яндекса, генерация SEO-дружественных slug.
+
+---
 
 ### Использование:
 
 ```ts
 import slugify from './slugify'
 
-console.log(slugify('Пример строки')) // primer-stroki
+console.log(slugify('Екатеринбург')) // yekaterinburg
 ```
 
 ### 
