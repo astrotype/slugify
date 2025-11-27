@@ -8,27 +8,33 @@ const slugify = (input: string): string => {
   let output = ''
 
   const lowerCased = input.toLowerCase()
+  const length = lowerCased.length
 
   const hasExceptionEnding = lowerCased.endsWith('ий') || lowerCased.endsWith('ый')
 
-  for (let i = 0; i < lowerCased.length; i++) {
+  for (let i = 0; i < length; i++) {
     const char = lowerCased[i]
     const prev = lowerCased[i - 1] ?? ''
+    const next = lowerCased[i + 1] ?? ''
+
+    if (char === 'ь' && next === 'и') {
+      output += 'y'
+      continue
+    }
 
     if (char === 'е') {
       output += (i === 0 || cyrillicVowels.has(prev) || prev === 'ъ') ? 'ye' : 'e'
       continue
     }
 
-    if (hasExceptionEnding && (i === lowerCased.length - 2)) {
-      if (char === 'и' || char === 'ы') {
-        output += 'i'
-        continue
-      }
-      if (char === 'й') {
-        output += 'y'
-        continue
-      }
+    if (hasExceptionEnding && i === length - 2) {
+      output += 'i';
+      continue;
+    }
+
+    if (hasExceptionEnding && i === length - 1) {
+      output += 'y';
+      continue;
     }
 
     output += transliterationMap[char] ?? char
