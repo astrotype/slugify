@@ -8,7 +8,7 @@
 
 ## Использование
 
-Просто скопируйте файл slugify.ts в ваш проект
+Просто скопируйте файл slugify.js/.ts в ваш проект
 
 ```ts
 import slugify from './slugify'
